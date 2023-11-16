@@ -8,17 +8,20 @@ using System.Threading;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 
+
 namespace MSSQLDump {
     class Program {
         private static string HOST = "(local)";
         private static string USER = "sa";
         private static string PASS = "sa";
+        private static bool USEINTEGRATED = false;
         private static string SavePath = @"C:\_SQL_SCHEMA_DUMP\";
         private static bool CleanDir = false;
         private static bool ExportStatistics = false;
         private static bool UseDAC = false;
         private static List<string> DBs = new List<string>();
-        private static _DB DB = new _DB( HOST, USER, PASS );
+        private static _DB DB = new _DB( HOST, USER, PASS, USEINTEGRATED);
+        private static string ConnectionString = "";
 
         static void Main( string[] args ) {
             if ( args.Count() == 0 ) {
@@ -35,6 +38,12 @@ namespace MSSQLDump {
                     return;
                 Console.Clear();
             }
+            // init string
+            if (USEINTEGRATED)
+                ConnectionString = "packet size=4096;user id=" + USER + ";Integrated security=True; data source=" + HOST + ";persist security info=True;";
+            else
+                ConnectionString = "packet size=4096;user id=" + USER + ";Password=" + PASS + ";data source=" + HOST + ";persist security info=True;";
+
 
             //Use DAC
             if ( UseDAC ) {
@@ -48,10 +57,10 @@ namespace MSSQLDump {
                     return;
                 }
 
-                DB = new _DB( "ADMIN:" + HOST, USER, PASS );
+                DB = new _DB( "ADMIN:" + HOST, USER, PASS, USEINTEGRATED);
                 Console.Clear();
             }
-            var cn = new SqlConnection( "packet size=4096;user id=" + USER + ";Password=" + PASS + ";data source=" + HOST + ";persist security info=True;initial catalog=master;" );
+            var cn = new SqlConnection(ConnectionString +"initial catalog=master;");
             try {
                 cn.Open();
                 cn.Close();
@@ -253,6 +262,7 @@ namespace MSSQLDump {
             Console.WriteLine( "     -s : Also export statistics, defaults to false" );
             Console.WriteLine( "     -a : Use DAC to try decrypt encrypted objects, defaults to false" );
             Console.WriteLine( "     -b : Comma separated value of databases to export, defaults to empty string" );
+            Console.WriteLine( "     -E : Use integrated security (from domain, password not required)");
             Console.ReadKey();
         }
         private static bool ReadArguments( string[] args ) {
@@ -287,6 +297,9 @@ namespace MSSQLDump {
                             continue;
                         case "-a":
                             UseDAC = true;
+                            continue;
+                        case "-E":
+                            USEINTEGRATED = true;
                             continue;
                         case "-b":
                             if ( args[i + 1].Substring( 0, 1 ) != "-" ) {

@@ -13,13 +13,19 @@ namespace MSSQLDump {
         private string _host = "";
         private string _user = "";
         private string _password = "";
+        private bool _integrated = false;
 
-        public _DB( string host, string user, string password ) {
+        public _DB( string host, string user, string password, bool useintegrated = false ) {
             _host = host;
             _user = user;
             _password = password;
+            _integrated = useintegrated;
 
-            cn.ConnectionString = "packet size=4096;user id=" + _user + ";Password=" + _password + ";data source=" + _host + ";persist security info=True;initial catalog=master;";
+            if (_integrated)
+                cn.ConnectionString = "packet size=4096;user id=" + _user + ";Integrated security=True" + "; data source=" + _host + ";persist security info=True;initial catalog=master;";
+            else
+                cn.ConnectionString = "packet size=4096;user id=" + _user + ";Password=" + _password + ";data source=" + _host + ";persist security info=True;initial catalog=master;";
+
             cmd.Connection = cn;
             cmd.CommandTimeout = 3600;
             cmd.Prepare();

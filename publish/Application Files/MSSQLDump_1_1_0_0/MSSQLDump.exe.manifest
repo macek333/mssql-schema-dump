@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="MSSQLDump.exe" version="1.1.0.0" publicKeyToken="13a6d89efc796971" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="MSSQLDump" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="MSSQLDump.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Možnosti manifestu UAC
+          Chcete-li změnit úroveň řízení uživatelských účtů v systému Windows, nahraďte 
+          uzel requestedExecutionLevel jedním z následujících.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Chcete-li využít virtualizaci souborů a registru pro zpětnou 
+         kompatibilitu, odstraňte uzel requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.SqlServer.ConnectionInfo.dll" size="171504">
+      <assemblyIdentity name="Microsoft.SqlServer.ConnectionInfo" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MzZguqatiBWi5KNnly2IL0+UO+mxC9wZSTmIarDjxCc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.SqlServer.Management.Sdk.Sfc.dll" size="507376">
+      <assemblyIdentity name="Microsoft.SqlServer.Management.Sdk.Sfc" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>vCnDZlDCEwSNilzWSFZNO4yOlrOYTMTPcaYOA+6dkDw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.SqlServer.Smo.dll" size="3644928">
+      <assemblyIdentity name="Microsoft.SqlServer.Smo" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>7YJorBfbqpI+L/LNq2GnpRmzXAxCPsJNj1QNgVvlxgE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.SqlServer.SqlEnum.dll" size="1334776">
+      <assemblyIdentity name="Microsoft.SqlServer.SqlEnum" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>17NWGANW6w+2pm4qzW4ZkwJdfG42ruRntHRx+R2ylEk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MSSQLDump.exe" size="31200">
+      <assemblyIdentity name="MSSQLDump" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8dg0hK8oFnalfyL4X1Eh5EUbl95y5pCgdMwQm/CRJEg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="MSSQLDump.exe.config" size="167">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cLnujMIGSW7ZQRUgR/NHQS6IPOUGyNZQZae5B0tR6DI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-RPKTEQ9\milan" issuerKeyHash="ce14ea71b1648606b33f2810c26fa07e952a1ba9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>MjvY7KzRu64CYOYBTcwjWkXVbmaevNoaddBmW0tEnuM=</DigestValue></Reference></SignedInfo><SignatureValue>UcjaxQVi0X/Z3SfYWF1lJzf8iONVEGkNh758TDJsD+HO6U49deroLb/zp0/t/1Y3k/3cQrxmwEW6QF4+nah7uT5ZwTycgH4Cm8Xh2S0179tWcuFK+pLC2/oeRPSQ40DbAGP4jeV+EH+7+M2JCRrvO+PWSGaYNlRhaFGV57bvRQU=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wXCZXF5wSaJvAbwNpK70jxX1xLJtJiRpwkLPzuzF5gtC+7xpyM+baUoo7w+fh1ZX8Ej33pXYTfLyC3VC4Uz0UvcfIeUegTwg0GNGF+t3FeyFK+cTMzcTRcoB4YSeVPPvqiJpZUGMqNedVouAm3+nuZ8T0yDZcQ4DgVPtazgRkLU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e39e444b5b66d0751adabc9e666ed5455a23cc4d01e66002aebbd1acecd83b32" Description="" Url=""><as:assemblyIdentity name="MSSQLDump.exe" version="1.1.0.0" publicKeyToken="13a6d89efc796971" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-RPKTEQ9\milan</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>4rQjd7vjF+YLDokLR4ajfM2U5JKXEHsnMLeIMiHmRBU=</DigestValue></Reference></SignedInfo><SignatureValue>EQfLVq3YtfA1pbkv+nzA1waHTvH4FVQqMaoHyaXI1cHyPpoE9gYt0/pahNpviYFeM0jPc7WbUuIcw7qHf5ZijTYzjLGdemkOuxUTngRL0svO51WvuKox4hpRwhuo4MLeoxYMzF4QwATJhN34c6uabR30RpQxKO1Xcy/FEtVr5C8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wXCZXF5wSaJvAbwNpK70jxX1xLJtJiRpwkLPzuzF5gtC+7xpyM+baUoo7w+fh1ZX8Ej33pXYTfLyC3VC4Uz0UvcfIeUegTwg0GNGF+t3FeyFK+cTMzcTRcoB4YSeVPPvqiJpZUGMqNedVouAm3+nuZ8T0yDZcQ4DgVPtazgRkLU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQKJqWrOmvVrdChaXsKt0HOjANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFIAUABLAFQARQBRADkAXABtAGkAbABhAG4wHhcNMjMxMTE2MjAwMjQ1WhcNMjQxMTE2MDIwMjQ1WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFIAUABLAFQARQBRADkAXABtAGkAbABhAG4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFwmVxecEmibwG8DaSu9I8V9cSybSYkacJCz87sxeYLQvu8acjPm2lKKO8Pn4dWV/BI996V2E3y8gt1QuFM9FL3HyHlHoE8INBjRhfrdxXshSvnEzM3E0XKAeGEnlTz76oiaWVBjKjXnVaLgJt/p7mfE9Mg2XEOA4FT7Ws4EZC1AgMBAAEwDQYJKoZIhvcNAQELBQADgYEAVnHoL6bUn2aIkThJEKqrkiiSG358NLvW3m2Vl6qumDaFImrh+Uv0m+SV5nNSOb76ZsMF8j8g8kDpDRLccO46TG5DKIKlSIzDsmA3k9c6KtTx6pfu3cScm7zDVVg4wwj0/PTxiABpM2z+/94nP5VGIryEwcaPQqMX9KIPWpPgpu8=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
