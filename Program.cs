@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -15,6 +16,7 @@ namespace MSSQLDump {
         private static string USER = "sa";
         private static string PASS = "sa";
         private static bool USEINTEGRATED = false;
+        private static bool SKIPPREFIX = false;
         private static string SavePath = @"C:\_SQL_SCHEMA_DUMP\";
         private static bool CleanDir = false;
         private static bool ExportStatistics = false;
@@ -263,6 +265,7 @@ namespace MSSQLDump {
             Console.WriteLine( "     -a : Use DAC to try decrypt encrypted objects, defaults to false" );
             Console.WriteLine( "     -b : Comma separated value of databases to export, defaults to empty string" );
             Console.WriteLine( "     -E : Use integrated security (from domain, password not required)");
+            Console.WriteLine( "   -sfp : Skip file prefixes (PROCEDURE, VIEW etc)");
             Console.ReadKey();
         }
         private static bool ReadArguments( string[] args ) {
@@ -300,6 +303,9 @@ namespace MSSQLDump {
                             continue;
                         case "-E":
                             USEINTEGRATED = true;
+                            continue;
+                        case "-sfp":
+                            SKIPPREFIX = true;
                             continue;
                         case "-b":
                             if ( args[i + 1].Substring( 0, 1 ) != "-" ) {
@@ -368,6 +374,7 @@ namespace MSSQLDump {
         }
         private static string PrepareSqlFile( string db, string schema, string objType, string objName, string objPath, string filePrefix ) {
             filePrefix = filePrefix != "" ? filePrefix + "_" : filePrefix;
+            if (SKIPPREFIX) objType = "";
             var filePath = objPath + Path.DirectorySeparatorChar + pathify( filePrefix + objType + "_" + schema + "_" + objName ) + ".sql";
 
             return filePath;

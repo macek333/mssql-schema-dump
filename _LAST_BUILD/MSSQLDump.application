@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="MSSQLDump.exe.manifest" size="7061">
+    <dependentAssembly dependencyType="install" codebase="MSSQLDump.exe.manifest" size="7045">
       <assemblyIdentity name="MSSQLDump.exe" version="1.1.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JtViyi9DBjTo9Tc6MqixlAihk2itEwz3opgy865DvuE=</dsig:DigestValue>
+        <dsig:DigestValue>GzUGzd3Txq1IF5h2vvrvPwHhWqJhcNfzRZT8mPsg7EQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

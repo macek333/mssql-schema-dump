@@ -14,16 +14,16 @@
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
-          Možnosti manifestu UAC
-          Chcete-li změnit úroveň řízení uživatelských účtů v systému Windows, nahraďte 
-          uzel requestedExecutionLevel jedním z následujících.
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         Chcete-li využít virtualizaci souborů a registru pro zpětnou 
-         kompatibilitu, odstraňte uzel requestedExecutionLevel.
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MSSQLDump.exe" size="31200">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MSSQLDump.exe" size="31712">
       <assemblyIdentity name="MSSQLDump" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>w2SwkOHuj9Q4L+gmZqzT/5jiR5Wwu9pUAEg2qDNvX7c=</dsig:DigestValue>
+        <dsig:DigestValue>NkBYIVFbxLAUjFmDn6vDAQTlzmYVd1tpYNmTRBtOLrg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

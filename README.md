@@ -26,3 +26,4 @@ Options:<br />
 <code>-s : Also export statistics, defaults to false</code><br />
 <code>-a : Use DAC to try decrypt encrypted objects, defaults to false</code><br />
 <code>-b : Comma separated value of databases to export, defaults to empty string</code>
+<code>-E : Use integrated security (from domain, password not required)</code>
