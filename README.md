@@ -25,5 +25,6 @@ Options:<br />
 <code>-c : Delete all files and folders from local path, defaults to false</code><br />
 <code>-s : Also export statistics, defaults to false</code><br />
 <code>-a : Use DAC to try decrypt encrypted objects, defaults to false</code><br />
-<code>-b : Comma separated value of databases to export, defaults to empty string</code>
-<code>-E : Use integrated security (from domain, password not required)</code>
+<code>-b : Comma separated value of databases to export, defaults to empty string</code><br />
+<code>-E : Use integrated security (from domain, password not required)</code><br />
+<code>-nopause : no readkey() at end</code><br />

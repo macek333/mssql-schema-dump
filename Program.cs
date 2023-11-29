@@ -24,6 +24,7 @@ namespace MSSQLDump {
         private static List<string> DBs = new List<string>();
         private static _DB DB = new _DB( HOST, USER, PASS, USEINTEGRATED);
         private static string ConnectionString = "";
+        private static bool PAUSE = true;
 
         static void Main( string[] args ) {
             if ( args.Count() == 0 ) {
@@ -235,7 +236,8 @@ namespace MSSQLDump {
 
             Console.WriteLine( Environment.NewLine );
             Console.WriteLine( "Done!" );
-            Console.ReadKey();
+            if (PAUSE) 
+                Console.ReadKey();
 
         }
 
@@ -266,6 +268,7 @@ namespace MSSQLDump {
             Console.WriteLine( "     -b : Comma separated value of databases to export, defaults to empty string" );
             Console.WriteLine( "     -E : Use integrated security (from domain, password not required)");
             Console.WriteLine( "   -sfp : Skip file prefixes (PROCEDURE, VIEW etc)");
+            Console.WriteLine( "   -nopause : no readkey() at end");
             Console.ReadKey();
         }
         private static bool ReadArguments( string[] args ) {
@@ -306,6 +309,9 @@ namespace MSSQLDump {
                             continue;
                         case "-sfp":
                             SKIPPREFIX = true;
+                            continue;
+                        case "-nopause":
+                            PAUSE = false;
                             continue;
                         case "-b":
                             if ( args[i + 1].Substring( 0, 1 ) != "-" ) {
